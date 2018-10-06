@@ -63,7 +63,6 @@ $(function() {
 
     // Aysnc test suite to check there is an element when feed is loaded.
     describe('Initial entries', function() {
-        const feed = document.querySelector('.feed');
          //beforeEach function runs first!
          beforeEach(function(done) {
         //Use callback parameter with "done" to ensure feed is loaded.
@@ -73,7 +72,8 @@ $(function() {
          /* Ensure at least one .entry element exists within .feed container: 
          * Expects more than 0 items in the feed. */
          it('an element exists', function() {
-            expect(feed.children.length).toBeGreaterThan(0);
+            const feedEntry = document.querySelectorAll('.feed .entry');
+            expect(feedEntry.length).toBeGreaterThan(0);
          });
 
     });
