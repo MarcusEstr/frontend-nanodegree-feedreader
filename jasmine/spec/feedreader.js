@@ -84,16 +84,22 @@ $(function() {
         const feed = document.querySelector('.feed');
         let initialFeed = '';
         let nextFeed = '';
-        //To check that content changes, must access loadFeed initially and again once clicked.
+        /* To check that content changes, 
+        * must access loadFeed initially (initialFeed) and then again (nextFeed). */
         beforeEach(function(done) {
-            loadFeed(0); // Load Udacity feed.
-            initialFeed = feed.children[0].innerText;
-            loadFeed(1, done); // Load CSS Tricks feed.
-         });
+            loadFeed(0, function() { //called when loadFeed is done loading first feed.
+                initialFeed = feed.children[0].innerText;
+                loadFeed(1, function() {
+                    nextFeed = feed.children[0].innerText;
+                    done();
+                });
+            });
+        });
+
         /* Compare the two feeds (feed entries before next loaded, and after:
         * Expects that the the feed content changes. */
         it('content changed', function() {
-            nextFeed = feed.children[0].innerText;
+            // nextFeed = feed.children[0].innerText;
             expect(initialFeed != nextFeed).toBe(true);
         });
 
