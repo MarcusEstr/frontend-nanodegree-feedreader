@@ -2,12 +2,12 @@
 
 This is the Feed Reader Testing project from the Udacity Frontend Web Developer Nanodegree. The starter code belongs to Udacity. Test suites were written by me. 
 
-19. Implement error handling for undefined variables and out-of-bound array access.
-
 
 # How to Run
 
 Download or clone the GitHub repository [using this link](https://github.com/MarcusEstr/frontend-nanodegree-feedreader). Then open the `index.html` file. The page will load - scroll to the bottom to review the Jasmine tests for success and/or failure. 
+
+Or, you can simply view it hosted in the browser without needing to download anything. [Click here for the GitHub-hosted link](https://marcusestr.github.io/frontend-nanodegree-feedreader/). 
 
 
 # Test Suites
