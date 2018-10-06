@@ -7,7 +7,7 @@ This is the Feed Reader Testing project from the Udacity Frontend Web Developer 
 
 Download or clone the GitHub repository [using this link](https://github.com/MarcusEstr/frontend-nanodegree-feedreader). Then open the `index.html` file. The page will load - scroll to the bottom to review the Jasmine tests for success and/or failure. 
 
-Or, you can simply view it hosted in the browser without needing to download anything. [Click here for the GitHub-hosted link](https://marcusestr.github.io/frontend-nanodegree-feedreader/). 
+Or, you can simply view it hosted in the browser without needing to download anything. [Click here for the GitHub-hosted link](https://marcusestr.github.io/frontend-nanodegree-feedreader/). Please note that this option will require you to "Load unsafe scripts" (the Google Feed API) or none of the feed entries will appear on screen. 
 
 
 # Test Suites
