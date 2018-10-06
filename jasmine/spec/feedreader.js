@@ -63,6 +63,7 @@ $(function() {
 
     // Aysnc test suite to check there is an element when feed is loaded.
     describe('Initial entries', function() {
+        const feed = document.querySelector('.feed');
          //beforeEach function runs first!
          beforeEach(function(done) {
         //Use callback parameter with "done" to ensure feed is loaded.
@@ -72,20 +73,29 @@ $(function() {
          /* Ensure at least one .entry element exists within .feed container: 
          * Expects more than 0 items in the feed. */
          it('an element exists', function() {
-            const feed = document.querySelector('.feed');
             expect(feed.children.length).toBeGreaterThan(0);
          });
 
     });
 
 
-    /* TODO: Write a new test suite named "New Feed Selection" */
+    /* Async test suite for new feed selection from menu. */
     describe('New Feed Selection', function() {
-        /* TODO: Write a test that ensures when a new feed is loaded
-         * by the loadFeed function that the content actually changes.
-         * Remember, loadFeed() is asynchronous.
-         */
-
+        const feed = document.querySelector('.feed');
+        let initialFeed = '';
+        let nextFeed = '';
+        //To check that content changes, must access loadFeed initially and again once clicked.
+        beforeEach(function(done) {
+            loadFeed(0); // Load Udacity feed.
+            initialFeed = feed.children[0].innerText;
+            loadFeed(1, done); // Load CSS Tricks feed.
+         });
+        /* Compare the two feeds (feed entries before next loaded, and after:
+        * Expects that the the feed content changes. */
+        it('content changed', function() {
+            nextFeed = feed.children[0].innerText;
+            expect(initialFeed != nextFeed).toBe(true);
+        });
 
     });
 
