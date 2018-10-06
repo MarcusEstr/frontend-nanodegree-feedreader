@@ -61,14 +61,21 @@ $(function() {
     });
 
 
-    /* TODO: Write a new test suite named "Initial Entries" */
+    // Aysnc test suite to check there is an element when feed is loaded.
     describe('Initial entries', function() {
-        /* TODO: Write a test that ensures when the loadFeed
-         * function is called and completes its work, there is at least
-         * a single .entry element within the .feed container.
-         * Remember, loadFeed() is asynchronous so this test will require
-         * the use of Jasmine's beforeEach and asynchronous done() function.
-         */
+         //beforeEach function runs first!
+         beforeEach(function(done) {
+        //Use callback parameter with "done" to ensure feed is loaded.
+            loadFeed(0, done);
+         });
+
+         /* Ensure at least one .entry element exists within .feed container: 
+         * Expects more than 0 items in the feed. */
+         it('an element exists', function() {
+            const feed = document.querySelector('.feed');
+            expect(feed.children.length).toBeGreaterThan(0);
+         });
+
     });
 
 
@@ -78,6 +85,8 @@ $(function() {
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
+
+
     });
 
 }());
